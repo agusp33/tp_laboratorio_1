@@ -6,10 +6,10 @@ int main()
 {
     char seguir='s';
     int opcion=0;
-    int x,y;
-    int suma, resta, multiplicacion, factorial=1, sumaFactorial;
-    float division, operaciones;
-
+    float x,y;
+    float s,r,d,m,f;
+    float valY,valCero;
+    char validacionY;
     while(seguir=='s')
     {
         printf("1- Ingresar 1er operando (A=x)\n");
@@ -27,54 +27,30 @@ int main()
         switch(opcion)
         {
             case 1:
-                printf("Ingrese numero: ");
-                scanf("%d",&x);
+                printf("Ingrese 1\147 numero: ");
+                scanf("%f",&x);
                 break;
             case 2:
-                printf("Ingrese numero: ");
-                scanf("%d",&y);
+                printf("Ingrese 2\147 numero: ");
+                scanf("%f",&y);
+                valY = validacionCero(y,validacionY);
+                printf("%f",valY);
                 break;
             case 3:
-                suma=x+y;
-                printf("La suma de los operando es: %d\n\n",suma);
+                s = sum(x,y);
+                printf("%f",s);
                 break;
             case 4:
-                resta=x-y;
-                printf("La resta de los operando es: %d\n\n",resta);
+                r = rest(x,y);
+                printf("%f",r);
                 break;
             case 5:
-                while(y==0)
-                {
-                    printf("Error... No se puede dividir por 0 \a\n");
-                    printf("Reingrese segundo Operando: ");
-                    scanf("%d",&y);
-                }
-                division=(float)x/y;
-                printf("La division de los operando es: %f\n\n",division);
                 break;
             case 6:
-                multiplicacion=x*y;
-                printf("La multiplicacion de los operando es: %d\n\n",multiplicacion);
                 break;
             case 7:
-                sumaFactorial = x+y;
-              if(sumaFactorial<0)
-                {
-                printf("La suma no puede ser menor o igual a CERO");
-                }
-                else
-                {
-                    while(sumaFactorial>0)
-                    {
-                        factorial=sumaFactorial*factorial;
-                        sumaFactorial--;
-                    }
-                }
-                printf("El factorial de los operando es: %d\n\n",factorial);
                 break;
             case 8:
-                operaciones=suma+resta+division+multiplicacion+factorial;
-                printf("El resultado de todas las operaciones es: %f\n\n",operaciones);
                 break;
             case 9:
                 seguir = 'n';
