@@ -5,8 +5,9 @@ float sum(float,float);
 float rest(float,float);
 float multiplication(float,float);
 float division(float,float);
+float getNumber(float);
 int factorial();
-float validacionCero (float,char);
+
 
 
 #endif // FUNCIONES_H_INCLUDED

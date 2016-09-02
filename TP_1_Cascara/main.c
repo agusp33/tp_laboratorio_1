@@ -6,10 +6,8 @@ int main()
 {
     char seguir='s';
     int opcion=0;
-    float x,y;
-    float s,r,d,m,f;
-    float valY,valCero;
-    char validacionY;
+    float numeroUno,numeroDos,x,y;
+    float suma,resta,mult,div;
     while(seguir=='s')
     {
         printf("1- Ingresar 1er operando (A=x)\n");
@@ -27,26 +25,32 @@ int main()
         switch(opcion)
         {
             case 1:
-                printf("Ingrese 1\147 numero: ");
-                scanf("%f",&x);
+                numeroUno = getNumber(x);
+                printf("---------------------------\n");
                 break;
             case 2:
-                printf("Ingrese 2\147 numero: ");
-                scanf("%f",&y);
-                valY = validacionCero(y,validacionY);
-                printf("%f",valY);
+                numeroDos = getNumber(y);
+                printf("---------------------------\n");
                 break;
             case 3:
-                s = sum(x,y);
-                printf("%f",s);
+                suma = sum(numeroUno,numeroDos);
+                printf("La suma es: %f\n",suma);
+                printf("---------------------------\n");
                 break;
             case 4:
-                r = rest(x,y);
-                printf("%f",r);
+                resta = rest(numeroUno,numeroDos);
+                printf("La resta es: %f\n",resta);
+                printf("---------------------------\n");
                 break;
             case 5:
+                div = division(numeroUno,numeroDos);
+                printf("La division es: %f\n",div);
+                printf("---------------------------\n");
                 break;
             case 6:
+                mult = multiplication(numeroUno,numeroDos);
+                printf("La multiplicacion es: %f\n",mult);
+                printf("---------------------------\n");
                 break;
             case 7:
                 break;

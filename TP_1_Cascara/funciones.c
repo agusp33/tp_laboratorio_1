@@ -26,21 +26,10 @@ float division(float a,float b)
     return resultado;
 }
 
-float validacionCero (float a,char b)
+float getNumber(float a)
 {
-    float resultado;
-    printf("La division no puede ser por 0(CERO), Quiere reingresar el numero? s/n: \n\n");
-    scanf("%c",&b);
-    if(b == 's')
-    {
-        printf("Numero nuevo: ");
-        scanf("%f",&a);
-        resultado = a;
-    }
-    else
-    {
-        a=0;
-        resultado = a;
-    }
-    return resultado;
+    printf("Ingrese numero: ");
+    scanf("%f",&a);
+    return a;
 }
+
