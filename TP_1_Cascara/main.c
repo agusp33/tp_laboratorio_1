@@ -4,10 +4,10 @@
 
 int main()
 {
-    char seguir='s';
-    int opcion=0;
+    char seguir='s',respuestaFactorial;
+    int opcion=0,entero,fact;
     float numeroUno,numeroDos,x,y;
-    float suma,resta,mult,div;
+    float suma,resta,mult,div,ope;
     while(seguir=='s')
     {
         printf("1- Ingresar 1er operando (A=x)\n");
@@ -53,8 +53,16 @@ int main()
                 printf("---------------------------\n");
                 break;
             case 7:
+                entero = (int)numeroUno+(int)numeroDos;
+
+                fact = factorial(entero);
+                printf("El factorial del numero %d es: %d\n",entero,fact);
+                printf("---------------------------\n");
                 break;
             case 8:
+                ope = operations(suma,resta,div,mult,fact);
+                printf("El resultado de todas las operaciones es: %f\n",ope);
+                printf("---------------------------\n");
                 break;
             case 9:
                 seguir = 'n';
