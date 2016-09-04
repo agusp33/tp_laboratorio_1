@@ -8,6 +8,7 @@ float division(float,float);
 float getNumber(float);
 int factorial(int);
 int validationFactorial(int,char);
-
+float validationCeroDivition(float,char);
+float operations(float,float,float,float);
 
 #endif // FUNCIONES_H_INCLUDED

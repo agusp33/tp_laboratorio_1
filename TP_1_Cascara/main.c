@@ -4,10 +4,15 @@
 
 int main()
 {
-    char seguir='s',respuestaFactorial;
-    int opcion=0,entero,fact;
+    char seguir='s';
+    char respuestaFactorial,respuestaValCero;
+    int opcion=0;
+    int entero,fact,valFact;
     float numeroUno,numeroDos,x,y;
+    float valCero;
     float suma,resta,mult,div,ope;
+
+
     while(seguir=='s')
     {
         printf("1- Ingresar 1er operando (A=x)\n");
@@ -30,6 +35,7 @@ int main()
                 break;
             case 2:
                 numeroDos = getNumber(y);
+                valCero = validationCeroDivition(numeroDos,respuestaValCero);
                 printf("---------------------------\n");
                 break;
             case 3:
@@ -54,13 +60,17 @@ int main()
                 break;
             case 7:
                 entero = (int)numeroUno+(int)numeroDos;
-
-                fact = factorial(entero);
-                printf("El factorial del numero %d es: %d\n",entero,fact);
+                valFact = validationFactorial(entero,respuestaFactorial);
+                fact = factorial(valFact);
+                printf("El factorial del numero %d es: %d\n",valFact,fact);
                 printf("---------------------------\n");
                 break;
             case 8:
-                ope = operations(suma,resta,div,mult,fact);
+                ope = operations(suma,resta,div,mult);
+                entero = (int)numeroUno+(int)numeroDos;
+                valFact = validationFactorial(entero,respuestaFactorial);
+                fact = factorial(valFact);
+                ope = ope + fact;
                 printf("El resultado de todas las operaciones es: %f\n",ope);
                 printf("---------------------------\n");
                 break;

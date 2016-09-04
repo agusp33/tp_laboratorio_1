@@ -44,34 +44,65 @@ int factorial(int a)
     return valor;
 }
 
-float operations (float a,float b, float c, float d, int e)
+float operations (float a,float b, float c, float d)
 {
-    float resultado = a+b+c+d+e;
+    float resultado = a+b+c+d;
     return resultado;
 }
 
-int validationFactorial (int a,char b)
+int validationFactorial(int a, char b)
 {
-    scanf("%d",&a);
-    if(a<0)
+    int validacion;
+    if(a<0 && a == ' ')
     {
-        printf("Error, no existen factoriales de numeros negativos\n");
-        printf("Quiere reingresar el numero s/n??\n");
-        scanf("%c",&b);
-        if(b=='s')
+        printf("\nError, no se puede hacer factoriar de numeros negativos\n");
+        printf("\n¿Quiere reingresar el numero? S/N: ");
+        b = toupper(getche());
+        if(b == 'S')
         {
-            do
-            {
-                printf("Ingrese numero: ");
-                scanf("%d",&a);
-            }while(a<0);
-            return a;
+            printf("\nReingrese numero mayor/igual a CERO: ");
+            scanf("%d",&a);
+            validacion  = a;
         }
         else
         {
-            printf("Se cambiara el numero por 1");
+            printf("\nSystem.Error\a");
+        }
+
+    }
+    if(a>=0)
+    {
+        validacion = a;
+    }
+
+    return validacion;
+}
+
+float validationCeroDivition(float a,char b)
+{
+    float validation;
+    if(a==0)
+    {
+        printf("\nError, no se puede dividir por CERO\n");
+        printf("\n¿Quiere reingresar el numero? S/N: ");
+        b = toupper(getche());
+        if(b == 'S')
+        {
+            printf("Reingrese numero: ");
+            scanf("%f",&a);
+            validation = a;
+        }
+        else
+        {
+            printf("\nSystem.Error\a");
+
         }
     }
-return a;
+    else
+    {
+        validation = a;
+    }
+
+    return validation;
 }
 
