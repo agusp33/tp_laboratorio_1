@@ -66,13 +66,8 @@ int main()
                 printf("---------------------------\n");
                 break;
             case 8:
-                ope = operations(suma,resta,div,mult);
-                entero = (int)numeroUno+(int)numeroDos;
-                valFact = validationFactorial(entero,respuestaFactorial);
-                fact = factorial(valFact);
-                ope = ope + fact;
-                printf("El resultado de todas las operaciones es: %f\n",ope);
-                printf("---------------------------\n");
+                ope = operations(numeroUno,numeroDos,valFact);
+                printf("Todas las operaciones dan: %f\n",ope);
                 break;
             case 9:
                 seguir = 'n';
