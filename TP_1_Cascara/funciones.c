@@ -87,8 +87,8 @@ int factorial(int a)
  * \param Llama a la funcion multiplication y guarda el resultado en la variable mul.
  * \param Llama a la funcion division y guarda el resultado en la variable div.
  * \param Llama a la variable factorial y guarda el resultado en la variable fact.
- * \param Guarda los resultado de las variables(suma,resta,mul,div y fact) en la variable resultado.
- * \return Devuelve el valor de la variable resultado.
+ * \param Guarda en la variable RESULTADO las operaciones realizadas para mostralas por pantalla.
+ * \return Muestra por pantalla los resultados de las operaciones antes realizadas.
  */
 
 float operations (float a,float b,int e)
@@ -99,7 +99,7 @@ float operations (float a,float b,int e)
     float mul = multiplication(a,b);
     float div = division(a,b);
     int fact = factorial(e);
-    resultado = suma + resta + mul + div + fact;
+    resultado = printf("La suma es: %f\nLa resta es: %f\nLa multiplicacion es: %f\nLa division es: %f\nEl factorial de %d es: %d\n",suma,resta,mul,div,e,fact);
     return resultado;
 }
 
@@ -169,7 +169,7 @@ float validationCeroDivition(float a,char b)
         }
         else
         {
-            printf("\nSystem.Error\a");
+            printf("\nSystem.Error\a\n");
 
         }
     }

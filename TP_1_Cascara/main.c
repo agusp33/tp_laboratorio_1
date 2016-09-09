@@ -35,7 +35,6 @@ int main()
                 break;
             case 2:
                 numeroDos = getNumber(y);
-                valCero = validationCeroDivition(numeroDos,respuestaValCero);
                 printf("---------------------------\n");
                 break;
             case 3:
@@ -50,6 +49,7 @@ int main()
                 break;
             case 5:
                 div = division(numeroUno,numeroDos);
+                valCero = validationCeroDivition(numeroDos,respuestaValCero);
                 printf("La division es: %f\n",div);
                 printf("---------------------------\n");
                 break;
@@ -59,7 +59,7 @@ int main()
                 printf("---------------------------\n");
                 break;
             case 7:
-                entero = (int)numeroUno+(int)numeroDos;
+                entero = (int)numeroUno;
                 valFact = validationFactorial(entero,respuestaFactorial);
                 fact = factorial(valFact);
                 printf("El factorial del numero %d es: %d\n",valFact,fact);
@@ -67,7 +67,6 @@ int main()
                 break;
             case 8:
                 ope = operations(numeroUno,numeroDos,valFact);
-                printf("Todas las operaciones dan: %f\n",ope);
                 break;
             case 9:
                 seguir = 'n';
