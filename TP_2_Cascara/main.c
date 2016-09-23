@@ -14,6 +14,7 @@ int main()
     int auxEstado;
     int lugarlibre;
 
+    obtenerEspacioLibre(agregarPersona,20,-1);
     while(seguir=='s')
     {
         printf("1- Agregar persona\n");
@@ -27,9 +28,15 @@ int main()
         switch(opcion)
         {
             case 1:
+                printf("Ingrese Nombre: ");
+                fflush(stdin);
+                validarLetras(gets(auxNombreApellido));
+                if(validarLetras(auxNombreApellido) == 0)
+                {
+                    printf("Ingrese solo letras\n");
+                }
                 break;
             case 2:
-
                 break;
             case 3:
                 break;

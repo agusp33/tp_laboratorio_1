@@ -3,14 +3,7 @@
 #include <string.h>
 #include "funciones.h"
 
-void arrayPeople(EPersona arrayPersonas[], int longitud, int a)
-{
-    int i;
-    for(i=0;i<longitud;i++)
-    {
-        arrayPersonas[i].estado=a;
-    }
-}
+
 int obtenerEspacioLibre(EPersona lista[], int longitud, int a)
 {
     int i;

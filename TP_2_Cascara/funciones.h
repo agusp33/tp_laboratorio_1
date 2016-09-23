@@ -25,13 +25,6 @@ int validarLetras(char soloLetras[]);
  */
 
 int validarNumeros(char soloNumeros[]);
-/**
- * @param lista el array que se pasa como parametro.
- * @param largo del array.
- * @param valor de ESTADO que permite la entrada de datos.
- */
-
-void arrayPeople(EPersona arrayPersonas[], int longitud, int a);
 
 /**
  * Obtiene el primer indice libre del array.
