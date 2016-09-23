@@ -31,9 +31,11 @@ int main()
                 printf("Ingrese Nombre: ");
                 fflush(stdin);
                 validarLetras(gets(auxNombreApellido));
-                if(validarLetras(auxNombreApellido) == 0)
+                while(validarLetras(auxNombreApellido) == 0)
                 {
                     printf("Ingrese solo letras\n");
+                    printf("Reingrese nombre: ");
+                    gets(auxNombreApellido);
                 }
                 break;
             case 2:
