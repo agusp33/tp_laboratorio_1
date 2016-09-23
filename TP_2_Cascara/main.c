@@ -1,12 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "funciones.h"
-
+#define LONGITUD 5
 
 int main()
 {
     char seguir='s';
     int opcion=0;
+    EPersona agregarPersona[LONGITUD];
+    char auxNombreApellido[100];
+    int auxEdad;
+    int auxDni;
+    int auxEstado;
+    int lugarlibre;
 
     while(seguir=='s')
     {
@@ -23,6 +29,7 @@ int main()
             case 1:
                 break;
             case 2:
+
                 break;
             case 3:
                 break;
@@ -33,6 +40,5 @@ int main()
                 break;
         }
     }
-
     return 0;
 }
