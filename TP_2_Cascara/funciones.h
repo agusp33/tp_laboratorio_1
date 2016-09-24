@@ -15,7 +15,6 @@ typedef struct {
  * @param array de cadena a ser analizado.
  * @return devuelve 1 en caso de ser letra y 0 en caso de ser otra cosa.
  */
-
 int validarLetras(char soloLetras[]);
 
 /**
@@ -23,7 +22,6 @@ int validarLetras(char soloLetras[]);
  * @param array de cadena a ser analizado.
  * @return devuelve 1 en caso de ser numero y 0 en caso de ser otra cosa.
  */
-
 int validarNumeros(char soloNumeros[]);
 
 /**
@@ -43,6 +41,26 @@ int obtenerEspacioLibre(EPersona lista[], int longitud,int a);
  */
 int buscarPorDni(EPersona lista[],int longitud, int dni);
 
-void functionGraph();//grafico de edades
+/**
+ * Array de personas que crea el usuario.
+ *@param array a usarse.
+ *@param largo del array.
+ */
+void addPerson(EPersona arrayPersona[],int largo);
+
+/**
+ * Array que borra personas.
+ *@param array a usarse.
+ *@param largo del array.
+ *@return devuelve el valor de -1 o 0
+ */
+int deletePerson(EPersona arrayPersona[],int largo);
+
+/**
+ * Array que ordena datos por nombre
+ *@param array a usarse.
+ *@param largo del array.
+ */
+void ordenarNombre(EPersona arrayPersona[],int largo);
 
 #endif // FUNCIONES_H_INCLUDED

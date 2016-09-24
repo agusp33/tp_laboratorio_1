@@ -147,50 +147,37 @@ int deletePerson(EPersona arrayPersona[],int largo)
             printf("No existe ese DNI\n");
         }
     }
+    return 0;
 }
 
-//void functionGraph()
-//{
-//     int i, hasta18=3, de19a35=5, mayorDe35=7, flag=0, mayor;
-//
-//    if(hasta18 >= de19a35 && hasta18 >= mayorDe35){
-//        mayor = hasta18;
-//    }else{
-//        if(de19a35 >= hasta18 && de19a35 >= mayorDe35)
-//        {
-//            mayor = de19a35;
-//        }
-//        else{
-//        mayor = mayorDe35;
-//        }
-//    }
-//
-//    for(i=mayor; i>0; i--){
-//        if(i<10){
-//            printf("%02d|",i);
-//        }
-//        else
-//            printf("%02d|",i);
-//
-//        if(i<= hasta18){
-//            printf("*");
-//        }
-//        if(i<= de19a35){
-//            flag=1;
-//            printf("\t*");
-//        }
-//        if(i<= mayorDe35){
-//            if(flag==0)
-//                printf("\t\t*");
-//            if(flag==1)
-//                printf("\t*");
-//
-//        }
-//        //Bajo una linea luego de cada iteracion
-//        printf("\n");
-//    }
-//    printf("--+-----------------");
-//    printf("\n  |<18\t19-35\t>35");
-//    printf("\n   %d\t%d\t%d", hasta18, de19a35, mayorDe35);
-//}
+void ordenarNombre(EPersona arrayPersona[],int largo)
+{
+    int i,j;
+    EPersona auxiliar;
+    for(i=0;i<largo-1;i++)
+    {
+        if(arrayPersona[i].estado == -1)
+        {
+            continue;
+        }
+        for(j=i+1;j<largo;j++)
+        {
+            if(arrayPersona[i].estado == -1)
+            {
+                continue;
+            }
+            if(strcmp(arrayPersona[i].nombre,arrayPersona[j].nombre)>0)
+            {
+                auxiliar=arrayPersona[i];
+                arrayPersona[i]=arrayPersona[j];
+                arrayPersona[j]=auxiliar;
+            }
+        }
+    }
+    for (i=0;i<largo;i++)
+    {
+        printf("%s\n",arrayPersona[i].nombre);
+    }
+}
+
 

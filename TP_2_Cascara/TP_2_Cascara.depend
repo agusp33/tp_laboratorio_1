@@ -25,3 +25,16 @@
 	<stdlib.h>
 	"funciones.h"
 
+1474683405 source:c:\users\kado jiari\desktop\agus\utn\primer cuatrimestre\trabajos practicos\tp_2_cascara\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funciones.h"
+
+1474683345 c:\users\kado jiari\desktop\agus\utn\primer cuatrimestre\trabajos practicos\tp_2_cascara\funciones.h
+
+1474683395 source:c:\users\kado jiari\desktop\agus\utn\primer cuatrimestre\trabajos practicos\tp_2_cascara\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+
