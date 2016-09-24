@@ -1,18 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "funciones.h"
-#define LONGITUD 5
+#define LONGITUD 1
 
 int main()
 {
     char seguir='s';
     int opcion=0;
     EPersona agregarPersona[LONGITUD];
-    char auxNombreApellido[100];
-    int auxEdad;
-    int auxDni;
-    int auxEstado;
-    int lugarlibre;
+
 
     obtenerEspacioLibre(agregarPersona,20,-1);
     while(seguir=='s')
@@ -28,17 +24,10 @@ int main()
         switch(opcion)
         {
             case 1:
-                printf("Ingrese Nombre: ");
-                fflush(stdin);
-                validarLetras(gets(auxNombreApellido));
-                while(validarLetras(auxNombreApellido) == 0)
-                {
-                    printf("Ingrese solo letras\n");
-                    printf("Reingrese nombre: ");
-                    gets(auxNombreApellido);
-                }
+                addPerson(agregarPersona,LONGITUD);
                 break;
             case 2:
+                deletePerson(agregarPersona,LONGITUD);
                 break;
             case 3:
                 break;
