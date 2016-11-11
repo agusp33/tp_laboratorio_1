@@ -1,0 +1,10 @@
+void get_String(char output[],char input[]);
+char get_Char(char output[]);
+float get_Float(char output[]);
+int get_Int(char output[]);
+int get_StringLetters(char output[],char input[]);
+int get_StringNumbers(char output[],char input[]);
+int val_Letter(char string[]);
+int val_Number(char string[]);
+int val_Range(int value, int longMin, int longMax);
+int val_Int(char output[],char input[],int longMin, int longMax);

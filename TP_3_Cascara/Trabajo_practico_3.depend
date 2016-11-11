@@ -1,0 +1,26 @@
+# depslib dependency file v1.0
+1478873191 source:c:\users\shugar\downloads\tp_laboratorio_3-master\tp_laboratorio_3-master\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"peliculas.h"
+	"libreria.h"
+
+1478873191 c:\users\shugar\downloads\tp_laboratorio_3-master\tp_laboratorio_3-master\peliculas.h
+
+1478873191 c:\users\shugar\downloads\tp_laboratorio_3-master\tp_laboratorio_3-master\libreria.h
+
+1478873191 source:c:\users\shugar\downloads\tp_laboratorio_3-master\tp_laboratorio_3-master\peliculas.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"peliculas.h"
+	"libreria.h"
+
+1478873191 source:c:\users\shugar\downloads\tp_laboratorio_3-master\tp_laboratorio_3-master\libreria.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"peliculas.h"
+	"libreria.h"
+
