@@ -56,13 +56,13 @@ int main(void)
 //        startTesting(8);//OK
 //        startTesting(9);//OK
 //        startTesting(10);//OK
-//        startTesting(11);//NO (ERROR 000000) (push)
+        startTesting(11);//NO (ERROR 000000) (push)
 //        startTesting(12);//OK
-//        startTesting(13);//OK
+//       startTesting(13);//OK
         startTesting(14);//NO (ERROR 000000)(pop)
 //        startTesting(15);//OK
 //        startTesting(16);//OK
-//        startTesting(17);//NO(sort)
+//        startTesting(17);//OK
     #else
         //run();
         run2();
