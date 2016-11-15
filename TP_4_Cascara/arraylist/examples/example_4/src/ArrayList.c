@@ -3,10 +3,9 @@
 #include <string.h>
 #include "../inc/ArrayList.h"
 
-// funciones privadas
-int resizeUp(ArrayList* pList); //realloc llamarlo desde al_add
-int expand(ArrayList* pList,int index); //
-int contract(ArrayList* pList,int index); // contrario a resizeup resta 1 cuando eleimino un elemento
+int resizeUp(ArrayList* pList);
+int expand(ArrayList* pList,int index);
+int contract(ArrayList* pList,int index);
 
 #define AL_INCREMENT      10
 #define AL_INITIAL_VALUE  10
@@ -59,7 +58,6 @@ ArrayList* al_newArrayList(void)
     return returnAux;
 }
 
-
 /** \brief  Add an element to arrayList and if is
  *          nessesary resize the array
  * \param pList ArrayList* Pointer to arrayList
@@ -70,12 +68,10 @@ ArrayList* al_newArrayList(void)
 int al_add(ArrayList* pList,void* pElement)
 {
 
-
 int returnAux = -1;
-//    void *aux;
     if(pList != NULL && pElement != NULL)
     {
-       if(pList->size == pList->reservedSize)// si el espacio reservado es igual a la cantidad cargada reservo mas
+       if(pList->size == pList->reservedSize)
        {
            if(resizeUp(pList)!=-1)
            {
@@ -83,16 +79,6 @@ int returnAux = -1;
                 pList->pElements[pList->size] = pElement;
                 pList->size ++;
            }
-           //usar resizeup! no realloc
-//           aux = realloc(pList->pElements,sizeof(void *)*(pList->reservedSize + AL_INCREMENT));
-//           if(aux != NULL)
-//           {
-//                returnAux = 0;
-//                pList->pElements = aux;
-//                pList->reservedSize = pList->reservedSize + AL_INCREMENT;
-//                pList->pElements[pList->size] = pElement;
-//                pList->size ++;
-//           }
        }
        else
        {
@@ -101,16 +87,12 @@ int returnAux = -1;
             pList->size ++;
        }
     }
-
     return returnAux;
-
-
 }
 
 /** \brief  Delete arrayList
  * \param pList ArrayList* Pointer to arrayList
  * \return int Return (-1) if Error [pList is NULL pointer] - (0) if Ok
- *
  */
 int al_deleteArrayList(ArrayList* pList)
 {
@@ -121,14 +103,12 @@ int al_deleteArrayList(ArrayList* pList)
         free(pList);
         returnAux = 0;
     }
-
     return returnAux;
 }
 
 /** \brief  Delete arrayList
  * \param pList ArrayList* Pointer to arrayList
  * \return int Return length of array or (-1) if Error [pList is NULL pointer]
- *
  */
 int al_len(ArrayList* pList)
 {
@@ -140,12 +120,10 @@ int al_len(ArrayList* pList)
     return returnAux;
 }
 
-
 /** \brief  Get an element by indexal_get(ArrayList* pList , int index)
  * \param pList ArrayList* Pointer to arrayList
  * \param index int Index of the element
  * \return void* Return (NULL) if Error [pList is NULL pointer or invalid index] - (Pointer to element) if Ok
- *
  */
 void* al_get(ArrayList* pList , int index)
 {
@@ -157,7 +135,6 @@ void* al_get(ArrayList* pList , int index)
     }
     return returnAux;
 }
-
 
 /** \brief  Find if pList contains at least one element pElement
  * \param pList ArrayList* Pointer to arrayList
@@ -185,7 +162,6 @@ int al_contains(ArrayList* pList, void* pElement)
     return returnAux;
 }
 
-
 /** \brief  Set a element in pList at index position
  * \param pList ArrayList* Pointer to arrayList
  * \param index int Index of the element
@@ -197,15 +173,13 @@ int al_contains(ArrayList* pList, void* pElement)
 int al_set(ArrayList* pList, int index,void* pElement)
 {
     int returnAux = -1;
-    //expand(pList,index);
-    if(pElement != NULL && pList != NULL && index >= 0 && index < pList->size) //verificaciones
+    if(pElement != NULL && pList != NULL && index >= 0 && index < pList->size)
     {
             pList->pElements[index] = pElement;
             returnAux = 0;
     }
     return returnAux;
 }
-
 
 /** \brief  Remove an element by index
  * \param pList ArrayList* Pointer to arrayList
@@ -220,12 +194,10 @@ int al_remove(ArrayList* pList,int index)
     if(aux == 0)
     {
         returnAux = 0;
-        resizeDown(pList);// llamar a resizeDown <-<-<-<-<-<-<-<-
+        resizeDown(pList);
     }
     return returnAux;
 }
-
-
 
 /** \brief Removes all of the elements from this list
  * \param pList ArrayList* Pointer to arrayList
@@ -238,13 +210,11 @@ int al_clear(ArrayList* pList)
     if(pList != NULL)
     {
         pList->size = 0;
-        resizeDown(pList);// llamar al resizeDown <-<-<-<-<-<-<-<-<-<-<-
+        resizeDown(pList);
         returnAux = 0;
     }
     return returnAux;
 }
-
-
 
 /** \brief Returns an array containing all of the elements in this list in proper sequence
  * \param pList ArrayList* Pointer to arrayList
@@ -297,8 +267,6 @@ int al_push(ArrayList* pList, int index, void* pElement)
     return returnAux;
 }
 
-
-
 /** \brief Returns the index of the first occurrence of the specified element
  * \param pList ArrayList* Pointer to arrayList
  * \param pElement void* Pointer to element
@@ -318,11 +286,8 @@ int al_indexOf(ArrayList* pList, void* pElement)
                 }
             }
     }
-
     return returnAux;
 }
-
-
 
 /** \brief Returns true if this list contains no elements.
  * \param pList ArrayList* Pointer to arrayList
@@ -344,9 +309,6 @@ int al_isEmpty(ArrayList* pList)
     return returnAux;
 }
 
-
-
-
 /** \brief Remove the item at the given position in the list, and return it.
  * \param pList ArrayList* Pointer to arrayList
  * \param index int Index of the element
@@ -364,7 +326,6 @@ void* al_pop(ArrayList* pList,int index)
     return returnAux;
 }
 
-
 /** \brief Returns a new arrayList with a portion of pList between the specified
  *         fromIndex, inclusive, and toIndex, exclusive.
  * \param pList ArrayList* Pointer to arrayList
@@ -373,7 +334,7 @@ void* al_pop(ArrayList* pList,int index)
  * \return int Return (NULL) if Error [pList is NULL pointer or invalid 'from' or invalid 'to']
  *                  - ( pointer to new array) if Ok
  */
-ArrayList* al_subList(ArrayList* pList,int from,int to) // revisar! da error!
+ArrayList* al_subList(ArrayList* pList,int from,int to)
 {
     ArrayList* returnAux = NULL;
     void* aux;
@@ -390,7 +351,6 @@ ArrayList* al_subList(ArrayList* pList,int from,int to) // revisar! da error!
     }
     return returnAux ;
 }
-
 
 /** \brief Returns true if pList list contains all of the elements of pList2
  * \param pList ArrayList* Pointer to arrayList
@@ -455,13 +415,12 @@ int al_sort(ArrayList* pList, int (*pFunc)(void* ,void*), int order)
     return returnAux;
 }
 
-
 /** \brief Increment the number of elements in pList in AL_INCREMENT elements.
  * \param pList ArrayList* Pointer to arrayList
  * \return int Return (-1) if Error [pList is NULL pointer or if can't allocate memory]
  *                  - (0) if ok
  */
-int resizeUp(ArrayList* pList) // agregar verificacion si es necesario expandir. verificar si es necesario expandir, si no es necesario expandir devolver 0
+int resizeUp(ArrayList* pList)
 {
     int returnAux = -1;
     void* aux;
@@ -492,7 +451,7 @@ int resizeDown(ArrayList* pList)
     if(pList!=NULL)
     {
         returnAux = 0;
-        if(pList->size < pList->reservedSize - AL_INCREMENT) // Si el tamaño es menor a el tamaño reservado menos AL_INCREMENT, Restamos ese espacio.
+        if(pList->size < pList->reservedSize - AL_INCREMENT)
         {
             aux = realloc(pList->pElements, (sizeof(void *) * pList->reservedSize) - (sizeof(void*) * AL_INCREMENT));
             if(aux != NULL)
@@ -511,7 +470,7 @@ int resizeDown(ArrayList* pList)
  * \return int Return (-1) if Error [pList is NULL pointer or invalid index]
  *                  - ( 0) if Ok
  */
-int expand(ArrayList* pList,int index)//realloc
+int expand(ArrayList* pList,int index)
 {
     int returnAux = -1,auxLugar = 0,i;
     if(pList != NULL && index >=0 && index < pList->size)
@@ -541,7 +500,6 @@ int contract(ArrayList* pList,int index)
     int returnAux = -1,i;
     if(pList != NULL && index >= 0 && index <= pList->size)
     {
-
         for(i = index+1; i <= pList->size; i++)
         {
             pList->pElements[i-1] = pList->pElements[i];

@@ -46,23 +46,23 @@ int main(void)
 {
 
     #ifdef TEST
-//        startTesting(1);//OK
+        startTesting(1);//OK
         startTesting(2);//OK
-//        startTesting(3);//OK
-//        startTesting(4);//OK
-//        startTesting(5);//OK
-//        startTesting(6);//OK
-//        startTesting(7);//OK
-//        startTesting(8);//OK
-//        startTesting(9);//OK
-//        startTesting(10);//OK
-        startTesting(11);//NO (ERROR 000000) (push)
-//        startTesting(12);//OK
-//        startTesting(13);//OK
-        startTesting(14);//NO (ERROR 000000)(pop)
-//        startTesting(15);//OK
-//        startTesting(16);//OK
-//        startTesting(17);//OK
+        startTesting(3);//OK
+        startTesting(4);//OK
+        startTesting(5);//OK
+        startTesting(6);//OK
+        startTesting(7);//OK
+        startTesting(8);//OK
+        startTesting(9);//OK
+        startTesting(10);//OK
+        startTesting(11);//OK
+        startTesting(12);//OK
+        startTesting(13);//OK
+        startTesting(14);//OK
+        startTesting(15);//OK
+        startTesting(16);//OK
+        startTesting(17);//OK
     #else
         //run();
         run2();
