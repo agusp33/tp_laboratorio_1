@@ -32,5 +32,18 @@ struct
 int compareEmployee(void* pEmployeeA,void* pEmployeeB);
 void printEmployee(Employee* p);
 Employee* newEmployee(int id, char name[],char lastName[],float salary,int sector);
+void employee_delete(Employee* this);
+int employee_setId(Employee* this, int id);
+int employee_getId(Employee* this);
+int employee_setName(Employee* this, char* name);
+char* employee_getName(Employee* this);
+int employee_setLastName(Employee* this, char* lastName);
+char* employee_getLastName(Employee* this);
+int employee_setSalary(Employee* this, int salary);
+int employee_getSalary(Employee* this);
+int employee_setSector(Employee* this, int sector);
+int employee_getSector(Employee* this);
+int employee_setIsEmpty(Employee* this, int isEmpty);
+int employee_getIsEmpty(Employee* this);
 
 
