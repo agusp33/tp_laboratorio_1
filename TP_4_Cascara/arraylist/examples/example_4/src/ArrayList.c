@@ -261,13 +261,16 @@ int al_push(ArrayList* pList, int index, void* pElement)
     int returnAux = -1;
     if(expand(pList,index) == 0 && pElement != NULL)
     {
-        pList->pElements[index]=pElement;
-        pList->size++;
+        if(pList->size == index)
+        {
+            pList->pElements[index]=pElement;
+            pList->size++;
+        }
+         else
+        {
+            al_set(pList,index,pElement);
+        }
         returnAux = 0;
-    }
-    else
-    {
-        al_set(pList,index,pElement);
     }
     return returnAux;
 }
@@ -441,9 +444,12 @@ int resizeUp(ArrayList* pList)
         aux = (void*)realloc(pList->pElements,(pList->reservedSize+AL_INCREMENT)* sizeof(void*));
         if(aux != NULL)
         {
+            returnAux = 0;
+            if(pList->size == pList->reservedSize)
+            {
             pList->pElements = aux;
             pList->reservedSize = pList->reservedSize+AL_INCREMENT;
-            returnAux = 0;
+            }
         }
     }
     return returnAux;
@@ -479,18 +485,17 @@ int resizeDown(ArrayList* pList)
 int expand(ArrayList* pList,int index)
 {
     int returnAux = -1;
+    int aux;
     int i;
-    if(pList != NULL && index >= 0 && index <pList->size)
+    if(pList != NULL && index >= 0 && index < pList->size)
     {
-        if(pList->size == pList->reservedSize)
-        {
-            if(resizeUp(pList) == 0)
+            aux = resizeUp(pList);
+            if(aux == 0)
             {
                 for(i=pList->size; i<index ;i++)
                 {
                     pList->pElements[i+1] = pList->pElements[i];
                 }
-            }
             pList->size++;
             returnAux = 0;
         }
