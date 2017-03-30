@@ -1,16 +1,11 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "funciones.h"
-
 int main()
 {
     char seguir='s';
-    char respuestaFactorial,respuestaValCero;
     int opcion=0;
-    int entero,fact,valFact;
-    float numeroUno,numeroDos,x,y;
-    float valCero;
-    float suma,resta,mult,div,ope;
+    int entero,fact;
+    float numeroUno,numeroDos;
+    float suma,resta,mult,div;
 
 
     while(seguir=='s')
@@ -30,11 +25,11 @@ int main()
         switch(opcion)
         {
             case 1:
-                numeroUno = getNumber(x);
+                numeroUno = getNumber();
                 printf("---------------------------\n");
                 break;
             case 2:
-                numeroDos = getNumber(y);
+                numeroDos = getNumber();
                 printf("---------------------------\n");
                 break;
             case 3:
@@ -48,8 +43,7 @@ int main()
                 printf("---------------------------\n");
                 break;
             case 5:
-                div = division(numeroUno,numeroDos);
-                valCero = validationCeroDivition(numeroDos,respuestaValCero);
+                div = division(numeroUno,validationCeroDivition(numeroDos));
                 printf("La division es: %f\n",div);
                 printf("---------------------------\n");
                 break;
@@ -60,19 +54,17 @@ int main()
                 break;
             case 7:
                 entero = (int)numeroUno;
-                valFact = validationFactorial(entero,respuestaFactorial);
-                fact = factorial(valFact);
-                printf("El factorial del numero %d es: %d\n",valFact,fact);
+                fact = factorial(validationFactorial(entero));
+                printf("El factorial del numero %d es: %d\n",entero,fact);
                 printf("---------------------------\n");
                 break;
             case 8:
-                ope = operations(numeroUno,numeroDos,valFact);
+                operations(numeroUno,numeroDos);
                 break;
             case 9:
                 seguir = 'n';
                 break;
         }
     }
-
     return 0;
 }

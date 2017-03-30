@@ -1,14 +1,17 @@
-#ifndef FUNCIONES_H_INCLUDED
-#define FUNCIONES_H_INCLUDED
-
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <conio.h>
+#include <ctype.h>
+float getNumber();
+////////////////////////////////////////////////////////////////////////////
 float sum(float,float);
 float rest(float,float);
 float multiplication(float,float);
 float division(float,float);
-float getNumber(float a);
 int factorial(int);
-int validationFactorial(int,char);
-float validationCeroDivition(float,char);
-float operations(float,float,int);
-
-#endif // FUNCIONES_H_INCLUDED
+float operations(float,float);
+////////////////////////////////////////////////////////////////////////////
+int validationFactorial(int);
+float validationCeroDivition(float);
+////////////////////////////////////////////////////////////////////////////
