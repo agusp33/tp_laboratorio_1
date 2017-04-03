@@ -55,6 +55,7 @@
 1490831756 source:d:\nueva carpeta\tp_1_cascara\funciones.c
 	"funciones.h"
 
+<<<<<<< HEAD
 1491245853 source:c:\users\shugar\desktop\things\utn\programacion\codeblocks\trabajo practicos\tp_laboratorio_1\tp_1_cascara\funciones.c
 	"funciones.h"
 
@@ -68,3 +69,5 @@
 1491245166 source:c:\users\shugar\desktop\things\utn\programacion\codeblocks\trabajo practicos\tp_laboratorio_1\tp_1_cascara\main.c
 	"funciones.h"
 
+=======
+>>>>>>> origin/master

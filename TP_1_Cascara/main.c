@@ -2,10 +2,18 @@
 int main()
 {
     char seguir='s';
+<<<<<<< HEAD
     char opcion[25];
     int entero,fact;
     float numeroUno,numeroDos;
     float suma,resta,mult,div;
+=======
+    int opcion=0;
+    int entero,fact;
+    float numeroUno,numeroDos;
+    float suma,resta,mult,div;
+
+>>>>>>> origin/master
 
     while(seguir=='s')
     {
@@ -21,6 +29,7 @@ int main()
 
         scanf("%s",opcion);
 
+<<<<<<< HEAD
             switch(atoi(opcion))
             {
                 case 1:
@@ -63,6 +72,50 @@ int main()
                 case 9:
                     seguir = 'n';
                     break;
+=======
+        switch(opcion)
+        {
+            case 1:
+                numeroUno = getNumber();
+                printf("---------------------------\n");
+                break;
+            case 2:
+                numeroDos = getNumber();
+                printf("---------------------------\n");
+                break;
+            case 3:
+                suma = sum(numeroUno,numeroDos);
+                printf("La suma es: %f\n",suma);
+                printf("---------------------------\n");
+                break;
+            case 4:
+                resta = rest(numeroUno,numeroDos);
+                printf("La resta es: %f\n",resta);
+                printf("---------------------------\n");
+                break;
+            case 5:
+                div = division(numeroUno,validationCeroDivition(numeroDos));
+                printf("La division es: %f\n",div);
+                printf("---------------------------\n");
+                break;
+            case 6:
+                mult = multiplication(numeroUno,numeroDos);
+                printf("La multiplicacion es: %f\n",mult);
+                printf("---------------------------\n");
+                break;
+            case 7:
+                entero = (int)numeroUno;
+                fact = factorial(validationFactorial(entero));
+                printf("El factorial del numero %d es: %d\n",entero,fact);
+                printf("---------------------------\n");
+                break;
+            case 8:
+                operations(numeroUno,numeroDos);
+                break;
+            case 9:
+                seguir = 'n';
+                break;
+>>>>>>> origin/master
         }
     }
     return 0;

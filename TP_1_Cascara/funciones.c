@@ -1,47 +1,66 @@
 #include "funciones.h"
+<<<<<<< HEAD
 /** \brief Suma entre dos numeros.
  * \param Variable del numero uno.
  * \param Variable del numero dos.
  * \return Resultado de la suma.
  */
+=======
+>>>>>>> origin/master
 float sum(float a,float b)
 {
     float resultado = a+b;
     return resultado;
 }
+<<<<<<< HEAD
 /** \brief Resta entre dos numeros.
  * \param Variable del numero uno.
  * \param Variable del numero dos.
  * \return Resultado de la resta.
  */
+=======
+
+>>>>>>> origin/master
 float rest(float a, float b)
 {
     float resultado = a-b;
     return resultado;
 }
+<<<<<<< HEAD
 /** \brief Multiplicacion de dos numeros.
  * \param Variable del numero uno.
  * \param Variable del numero dos.
  * \return Resultado de la multiplicacion.
  */
+=======
+
+>>>>>>> origin/master
 float multiplication(float a,float b)
 {
     float resultado = a*b;
     return resultado;
 }
+<<<<<<< HEAD
 /** \brief Division entre dos numeros.
  * \param Variable del numero uno.
  * \param Variable del numero dos.
  * \return Resultado de la division.
  */
+=======
+
+>>>>>>> origin/master
 float division(float a,float b)
 {
     float resultado = a/b;
     return resultado;
 }
+<<<<<<< HEAD
 /** \brief Pide el ingrese de un numero al usuario y lo retorna.
  * \return Numero ingresado por el usuario.
  */
+=======
+
+>>>>>>> origin/master
 float getNumber()
 {
     float a;
@@ -49,10 +68,14 @@ float getNumber()
     scanf("%f",&a);
     return a;
 }
+<<<<<<< HEAD
 /** \brief Calcula el factorial de un numero.
  * \param Variable del numero a calcular.
  * \return Valor del factorial del numero ingresado.
  */
+=======
+
+>>>>>>> origin/master
 int factorial(int a)
 {
     int valor;
@@ -63,11 +86,15 @@ int factorial(int a)
     valor = a * factorial(a-1);
     return valor;
 }
+<<<<<<< HEAD
 /** \brief Resolucion y muestra de operaciones matematicas.
  * \param Variable del numero uno.
  * \param Variable del numero dos.
  * \return Retorna por pantalla el resultado de las operaciones.
  */
+=======
+
+>>>>>>> origin/master
 float operations (float a,float b)
 {
     float resultado;
@@ -80,10 +107,14 @@ float operations (float a,float b)
     resultado = printf("La suma es: %f\nLa resta es: %f\nLa multiplicacion es: %f\nLa division es: %f\nEl factorial de %d es: %d\n",suma,resta,mul,div,redondeo,fact);
     return resultado;
 }
+<<<<<<< HEAD
 /** \brief Validacion factorial.
  * \param Numero a validar.
  * \return Numero validado.
  */
+=======
+
+>>>>>>> origin/master
 int validationFactorial(int a)
 {
     int validacion;
@@ -112,10 +143,14 @@ int validationFactorial(int a)
 
     return validacion;
 }
+<<<<<<< HEAD
 /** \brief Validacion division por cero.
  * \param Numero a validar.
  * \return Numero validado.
  */
+=======
+
+>>>>>>> origin/master
 float validationCeroDivition(float a)
 {
     float validation;
