@@ -1,17 +1,11 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "funciones.h"
-
 int main()
 {
     char seguir='s';
-    char respuestaFactorial,respuestaValCero;
-    int opcion=0;
-    int entero,fact,valFact;
-    float numeroUno,numeroDos,x,y;
-    float valCero;
-    float suma,resta,mult,div,ope;
-
+    char opcion[25];
+    int entero,fact;
+    float numeroUno,numeroDos;
+    float suma,resta,mult,div;
 
     while(seguir=='s')
     {
@@ -25,54 +19,51 @@ int main()
         printf("8- Calcular todas las operacione\n");
         printf("9- Salir\n");
 
-        scanf("%d",&opcion);
+        scanf("%s",opcion);
 
-        switch(opcion)
-        {
-            case 1:
-                numeroUno = getNumber(x);
-                printf("---------------------------\n");
-                break;
-            case 2:
-                numeroDos = getNumber(y);
-                printf("---------------------------\n");
-                break;
-            case 3:
-                suma = sum(numeroUno,numeroDos);
-                printf("La suma es: %f\n",suma);
-                printf("---------------------------\n");
-                break;
-            case 4:
-                resta = rest(numeroUno,numeroDos);
-                printf("La resta es: %f\n",resta);
-                printf("---------------------------\n");
-                break;
-            case 5:
-                div = division(numeroUno,numeroDos);
-                valCero = validationCeroDivition(numeroDos,respuestaValCero);
-                printf("La division es: %f\n",div);
-                printf("---------------------------\n");
-                break;
-            case 6:
-                mult = multiplication(numeroUno,numeroDos);
-                printf("La multiplicacion es: %f\n",mult);
-                printf("---------------------------\n");
-                break;
-            case 7:
-                entero = (int)numeroUno;
-                valFact = validationFactorial(entero,respuestaFactorial);
-                fact = factorial(valFact);
-                printf("El factorial del numero %d es: %d\n",valFact,fact);
-                printf("---------------------------\n");
-                break;
-            case 8:
-                ope = operations(numeroUno,numeroDos,valFact);
-                break;
-            case 9:
-                seguir = 'n';
-                break;
+            switch(atoi(opcion))
+            {
+                case 1:
+                    numeroUno = getNumber();
+                    printf("---------------------------\n");
+                    break;
+                case 2:
+                    numeroDos = getNumber();
+                    printf("---------------------------\n");
+                    break;
+                case 3:
+                    suma = sum(numeroUno,numeroDos);
+                    printf("La suma es: %f\n",suma);
+                    printf("---------------------------\n");
+                    break;
+                case 4:
+                    resta = rest(numeroUno,numeroDos);
+                    printf("La resta es: %f\n",resta);
+                    printf("---------------------------\n");
+                    break;
+                case 5:
+                    div = division(numeroUno,validationCeroDivition(numeroDos));
+                    printf("La division es: %f\n",div);
+                    printf("---------------------------\n");
+                    break;
+                case 6:
+                    mult = multiplication(numeroUno,numeroDos);
+                    printf("La multiplicacion es: %f\n",mult);
+                    printf("---------------------------\n");
+                    break;
+                case 7:
+                    entero = (int)numeroUno;
+                    fact = factorial(validationFactorial(entero));
+                    printf("El factorial del numero %d es: %d\n",entero,fact);
+                    printf("---------------------------\n");
+                    break;
+                case 8:
+                    operations(numeroUno,numeroDos);
+                    break;
+                case 9:
+                    seguir = 'n';
+                    break;
         }
     }
-
     return 0;
 }
