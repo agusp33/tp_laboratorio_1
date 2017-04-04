@@ -39,15 +39,22 @@ float division(float a,float b)
     float resultado = a/b;
     return resultado;
 }
-/** \brief Pide el ingrese de un numero al usuario y lo retorna.
+/** \brief Pide el ingrese de un numero al usuario.
  * \return Numero ingresado por el usuario.
  */
-float getNumber()
+char getNumber()
 {
-    float a;
+    char a[25];
+    char buffer[100];
     printf("Ingrese numero: ");
-    scanf("%f",&a);
-    return a;
+    scanf("%s",buffer);
+    while(validationNumber(buffer) != 1)
+    {
+        printf("Error. Ingrese solo numeros, porfavor reingrese: ");
+        scanf("%s",buffer);
+    }
+    *a = *buffer;
+    return *a;
 }
 /** \brief Calcula el factorial de un numero.
  * \param Variable del numero a calcular.
@@ -142,4 +149,49 @@ float validationCeroDivition(float a)
     }
 
     return validation;
+}
+/** \brief Validacion de que el array sean solo numerico.
+ * \param Variable (array) a validar/verificar.
+ * \return 1 si son solo numeros y 0 si no lo son.
+*/
+int validationNumber(char cadena[])
+{
+   int pos=0;
+   while(cadena[pos] != '\0')
+   {
+       if(cadena[pos] < '0' || cadena[pos] > '9')
+           return 0;
+       pos++;
+   }
+   return 1;
+}
+/** \brief Validacion de que el array sean solo letras.
+ * \param Variable (array) a validar/verificar.
+ * \return 1 si son solo letras y 0 si no lo son.
+*/
+int validationLetters(char cadena[])
+{
+   int pos=0;
+   while(cadena[pos] != '\0')
+   {
+       if((cadena[pos] != ' ') && (cadena[pos] < 'a' || cadena[pos] > 'z') && (cadena[pos] < 'A' || cadena[pos] > 'Z'))
+           return 0;
+       pos++;
+   }
+   return 1;
+}
+/** \brief Validacion de que el array sea alfanumerico.
+ * \param Variable (array) a validar/verificar.
+ * \return 1 si lo es y 0 si no lo es.
+*/
+int validationNumberAndLetters(char cadena[])
+{
+   int pos=0;
+   while(cadena[pos] != '\0')
+   {
+       if((cadena[pos] != ' ') && (cadena[pos] < 'a' || cadena[pos] > 'z') && (cadena[pos] < 'A' || cadena[pos] > 'Z') && (cadena[pos] < '0' || cadena[pos] > '9'))
+           return 0;
+       pos++;
+   }
+   return 1;
 }

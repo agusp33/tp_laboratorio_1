@@ -4,7 +4,7 @@ int main()
     char seguir='s';
     char opcion[25];
     int entero,fact;
-    float numeroUno,numeroDos;
+    char numeroUno[25],numeroDos[25];
     float suma,resta,mult,div;
 
     while(seguir=='s')
@@ -24,41 +24,41 @@ int main()
             switch(atoi(opcion))
             {
                 case 1:
-                    numeroUno = getNumber();
+                    *numeroUno = getNumber();
                     printf("---------------------------\n");
                     break;
                 case 2:
-                    numeroDos = getNumber();
+                    *numeroDos = getNumber();
                     printf("---------------------------\n");
                     break;
                 case 3:
-                    suma = sum(numeroUno,numeroDos);
+                    suma = sum(atof(numeroUno),atof(numeroDos));
                     printf("La suma es: %f\n",suma);
                     printf("---------------------------\n");
                     break;
                 case 4:
-                    resta = rest(numeroUno,numeroDos);
+                    resta = rest(atof(numeroUno),atof(numeroDos));
                     printf("La resta es: %f\n",resta);
                     printf("---------------------------\n");
                     break;
                 case 5:
-                    div = division(numeroUno,validationCeroDivition(numeroDos));
+                    div = division(atof(numeroUno),validationCeroDivition(atof(numeroDos)));
                     printf("La division es: %f\n",div);
                     printf("---------------------------\n");
                     break;
                 case 6:
-                    mult = multiplication(numeroUno,numeroDos);
+                    mult = multiplication(atof(numeroUno),atof(numeroDos));
                     printf("La multiplicacion es: %f\n",mult);
                     printf("---------------------------\n");
                     break;
                 case 7:
-                    entero = (int)numeroUno;
+                    entero = atoi(numeroUno);
                     fact = factorial(validationFactorial(entero));
                     printf("El factorial del numero %d es: %d\n",entero,fact);
                     printf("---------------------------\n");
                     break;
                 case 8:
-                    operations(numeroUno,numeroDos);
+                    operations(atof(numeroUno),atof(numeroDos));
                     break;
                 case 9:
                     seguir = 'n';

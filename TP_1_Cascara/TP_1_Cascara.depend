@@ -57,17 +57,17 @@
 
 1490831756 D
 
-1491246802 source:c:\users\shugar\desktop\things\utn\programacion\codeblocks\trabajo practicos\tp_laboratorio_1\tp_1_cascara\funciones.c
+1491314720 source:c:\users\shugar\desktop\things\utn\programacion\codeblocks\trabajo practicos\tp_laboratorio_1\tp_1_cascara\funciones.c
 	"funciones.h"
 
-1490894890 c:\users\shugar\desktop\things\utn\programacion\codeblocks\trabajo practicos\tp_laboratorio_1\tp_1_cascara\funciones.h
+1491314600 c:\users\shugar\desktop\things\utn\programacion\codeblocks\trabajo practicos\tp_laboratorio_1\tp_1_cascara\funciones.h
 	<stdio.h>
 	<stdlib.h>
 	<ctype.h>
 	<conio.h>
-	<ctype.h>
+	<string.h>
 
-1491246802 source:c:\users\shugar\desktop\things\utn\programacion\codeblocks\trabajo practicos\tp_laboratorio_1\tp_1_cascara\main.c
+1491315026 source:c:\users\shugar\desktop\things\utn\programacion\codeblocks\trabajo practicos\tp_laboratorio_1\tp_1_cascara\main.c
 	"funciones.h"
 
 1491245166 .h"
